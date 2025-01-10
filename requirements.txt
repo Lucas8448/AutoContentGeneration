@@ -15,11 +15,11 @@ tomlkit==0.12.5
 Flask==3.0.3
 clean-text==0.6.0
 unidecode==1.3.8
-spacy==3.7.5
+spacy
 torch==2.3.1
 transformers==4.41.2
 ffmpeg-python==0.2.0
-elevenlabs==1.3.0
+elevenlabs
 yt-dlp==2024.5.27
 numpy==1.26.4
 vosk
@@ -28,4 +28,4 @@ google-auth
 google-auth-oauthlib
 google-auth-httplib2
 google-api-python-client
-pydantic>=1.9,<3.0
+pydantic
