@@ -22,7 +22,7 @@ transformers==4.41.2
 ffmpeg-python==0.2.0
 elevenlabs
 yt-dlp==2024.5.27
-numpy
+numpy==1.26.4
 vosk
 instagrapi==1.12.9
 google-auth
