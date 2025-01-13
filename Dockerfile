@@ -18,6 +18,8 @@ USER appuser
 
 # Upgrade pip and install dependencies with precompiled wheels only
 COPY requirements.txt ./
+RUN pip install --no-cache-dir spacy[transformers]==3.6.0 && \
+    python -m spacy download en_core_web_sm
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir --only-binary :all: -r requirements.txt
 
