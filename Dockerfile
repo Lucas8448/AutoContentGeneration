@@ -1,23 +1,36 @@
-FROM python:3.12-slim-bookworm
+FROM python:3.13.1-slim-bookworm
 
-ENV DEBIAN_FRONTEND=noninteractive
-
+# Update and install necessary packages
 RUN apt-get update && \
-    apt-get install -y gcc g++ libffi-dev && \
     apt-get install -y --no-install-recommends \
-        ffmpeg \
         build-essential \
-        python3-dev \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+        gcc \
+        g++ \
+        libffi-dev \
+        libssl-dev \
+        libxml2-dev \
+        libxslt1-dev \
+        zlib1g-dev \
+        ffmpeg \
+        python3-pip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
+# Create and set the working directory
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --upgrade pip && \
-    pip install Cython==0.29.36 && \
-    pip install "pydantic>=1.9.2,<2.0.0" && \
-    pip install -r requirements.txt
+# Upgrade pip
+RUN pip install --upgrade pip
 
+# Install specific Python package
+RUN pip install --no-cache-dir "pydantic>=1.9.2,<2.0.0"
+
+# Copy requirements file and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application code
 COPY . .
 
+# Set the entry point for the container
 CMD ["python3", "main.py"]
