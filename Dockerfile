@@ -13,6 +13,7 @@ WORKDIR /app
 
 COPY requirements.txt .
 RUN pip install --upgrade pip && \
+    pip install Cython==0.29.36 && \
     pip install --no-cache-dir "pydantic>=1.9.2,<2.0.0" && \
     pip install --no-cache-dir -r requirements.txt
 
