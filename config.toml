@@ -7,7 +7,7 @@ password = "your_reddit_password_here"
 
 [reddit.thread]
 random = true
-subreddit = "AmItheAsshole+AskReddit"
+subreddit = "AmItheAsshole"
 post_id = "" # Optional: specify a specific post ID, or leave blank
 max_comment_length = 500 # Maximum number of characters for comments
 min_comment_length = 1 # Minimum number of characters for comments
