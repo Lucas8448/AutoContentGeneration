@@ -20,7 +20,7 @@ thinc<8.2.0
 torch==2.3.1
 transformers==4.41.2
 ffmpeg-python==0.2.0
-git+https://github.com/elevenlabs/elevenlabs-python@v3
+elevenlabs==1.50.3
 yt-dlp==2024.5.27
 numpy==1.26.4
 vosk
