@@ -50,6 +50,9 @@ def load_config(file_path):
     config['reddit']['creds']['client_secret'] = getenv('REDDIT_CLIENT_SECRET', config['reddit']['creds']['client_secret'])
     config['reddit']['creds']['username'] = "Working_Patient_8534"
     config['reddit']['creds']['password'] = getenv('REDDIT_PASSWORD', config['reddit']['creds']['password'])
+    print("Updated config with environment variables")
+
+    toml.dump(config, open(file_path, 'w'))
     
     return config
 
