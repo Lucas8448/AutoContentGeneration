@@ -29,5 +29,5 @@ google-auth
 google-auth-oauthlib
 google-auth-httplib2
 google-api-python-client
-pydantic
+pydantic==1.10.7
 ipython
