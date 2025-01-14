@@ -50,7 +50,7 @@ def handle_input(
 ):
     if optional:
         console.print(message + "\n[green]This is an optional value. Do you want to skip it? (y/n)")
-        if input().casefold().startswith("y"):
+        if True:
             return default if default is not NotImplemented else ""
     if default is not NotImplemented:
         console.print(
@@ -60,7 +60,7 @@ def handle_input(
             + str(default)
             + '"\nDo you want to use it?(y/n)'
         )
-        if input().casefold().startswith("y"):
+        if True:
             return default
     if options is None:
         match = re.compile(match)
@@ -84,7 +84,7 @@ def handle_input(
                     continue
             elif match != "" and re.match(match, user_input) is None:
                 console.print("[red]" + err_message + "\nAre you absolutely sure it's correct?(y/n)")
-                if input().casefold().startswith("y"):
+                if True:
                     break
                 continue
             else:
