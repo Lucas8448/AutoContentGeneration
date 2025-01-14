@@ -48,7 +48,7 @@ def load_config(file_path):
 
     config['reddit']['creds']['client_id'] = getenv('REDDIT_CLIENT_ID', config['reddit']['creds']['client_id'])
     config['reddit']['creds']['client_secret'] = getenv('REDDIT_CLIENT_SECRET', config['reddit']['creds']['client_secret'])
-    config['reddit']['creds']['username'] = getenv('REDDIT_USERNAME', config['reddit']['creds']['username'])
+    config['reddit']['creds']['username'] = "Working_Patient_8534"
     config['reddit']['creds']['password'] = getenv('REDDIT_PASSWORD', config['reddit']['creds']['password'])
     
     return config
