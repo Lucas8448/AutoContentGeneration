@@ -1,0 +1,50 @@
+[reddit.creds]
+client_id = "your_client_id_here"
+client_secret = "your_client_secret_here"
+username = "your_reddit_username_here"
+password = "your_reddit_password_here"
+2fa = false
+
+[reddit.thread]
+random = true
+subreddit = "AmItheAsshole+AskReddit"
+post_id = "" # Optional: specify a specific post ID, or leave blank
+max_comment_length = 500 # Maximum number of characters for comments
+min_comment_length = 1 # Minimum number of characters for comments
+post_lang = "en-US" # Optional: specify a language code, e.g., "en-US" or "es"
+min_comments = 20 # Minimum number of comments a post must have
+
+[ai]
+ai_similarity_enabled = false # Set to true to enable AI-based sorting
+ai_similarity_keywords = "" # Optional: specify keywords for AI-based sorting
+
+[settings]
+allow_nsfw = false # Set to true to allow NSFW content
+theme = "dark" # Choose "dark", "light", or "transparent"
+times_to_run = 1 # Number of times to run the script
+opacity = 0.9 # Opacity for comments overlay (0 to 1)
+storymode = false # Set to true to enable story mode
+storymodemethod = 1 # Choose story mode style: 0 (single picture) or 1 (fancy)
+storymode_max_length = 1000 # Max characters for story mode
+resolution_w = 1080 # Video width in pixels
+resolution_h = 1920 # Video height in pixels
+zoom = 1.0 # Browser zoom level (0.1 to 2.0)
+channel_name = "Reddit Stories" # Replace with your channel name
+show_Reddit_Title = true # Set to false to hide Reddit title at video start
+
+[settings.background]
+background_video = "rocket-league" # Choose a background video, e.g., "minecraft", "rocket-league"
+background_audio = "lofi" # Choose background audio, e.g., "lofi", "chill-summer"
+background_audio_volume = 0.15 # Volume for background audio (0 to 1)
+enable_extra_audio = false # Set to true to render another video without audio
+background_thumbnail = false # Set to true to generate a thumbnail
+background_thumbnail_font_family = "arial" # Font family for thumbnail text
+background_thumbnail_font_size = 96 # Font size for thumbnail text
+background_thumbnail_font_color = "255,255,255" # Font color in RGB format
+
+[settings.tts]
+voice_choice = "googletranslate" # Choose a TTS platform, e.g., "tiktok", "googletranslate"
+random_voice = true # Set to false to use the same voice for all comments
+elevenlabs_voice_name = "Bella" # Choose a voice for ElevenLabs TTS
+elevenlabs_api_key = "" # Optional: provide your ElevenLabs API key
+aws_polly_voice = "Matthew" # Choose a voice for AWS

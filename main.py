@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 import math
 import sys
-from os import name
+from os import name, getenv
 from pathlib import Path
 from subprocess import Popen
 from typing import NoReturn
+import toml
 
 from prawcore import ResponseException
 
@@ -42,6 +43,17 @@ print_markdown(
 )
 checkversion(__VERSION__)
 
+def load_config(file_path):
+    config = toml.load(file_path)
+
+    config['reddit']['creds']['client_id'] = getenv('REDDIT_CLIENT_ID', config['reddit']['creds']['client_id'])
+    config['reddit']['creds']['client_secret'] = getenv('REDDIT_CLIENT_SECRET', config['reddit']['creds']['client_secret'])
+    config['reddit']['creds']['username'] = getenv('REDDIT_USERNAME', config['reddit']['creds']['username'])
+    config['reddit']['creds']['password'] = getenv('REDDIT_PASSWORD', config['reddit']['creds']['password'])
+    
+    return config
+
+config = load_config('config.toml')
 
 def main(POST_ID=None) -> None:
     global redditid, reddit_object

@@ -30,3 +30,4 @@ google-auth-httplib2
 google-api-python-client
 pydantic==2.7.4
 ipython
+toml
