@@ -35,6 +35,18 @@ jobs:
           mkdir -p uploaders
           echo "${{ secrets.YOUTUBE_CLIENT_SECRET_JSON }}" | base64 --decode > uploaders/client_secret.json
 
+      - name: Run Bot to install FFmpeg
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_SECRET: ${{ secrets.REDDIT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+          INSTAGRAM_USERNAME: ${{ secrets.INSTAGRAM_USERNAME }}
+          INSTAGRAM_PASSWORD: ${{ secrets.INSTAGRAM_PASSWORD }}
+        run: |
+          source venv/bin/activate
+          python main.py
+      
       - name: Run Bot
         env:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
@@ -46,3 +58,4 @@ jobs:
         run: |
           source venv/bin/activate
           python main.py
+      
