@@ -117,9 +117,7 @@ def ffmpeg_install():
                 "FFmpeg is installed on this system! If you are seeing this error for the second time, restart your computer."
             )
         print("FFmpeg is not installed on this system.")
-        resp = input(
-            "We can try to automatically install it for you. Would you like to do that? (y/n): "
-        )
+        resp = "y"
         if resp.lower() == "y":
             print("Installing FFmpeg...")
             if os.name == "nt":
