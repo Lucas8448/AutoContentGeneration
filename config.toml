@@ -43,8 +43,12 @@ background_thumbnail_font_size = 96 # Font size for thumbnail text
 background_thumbnail_font_color = "255,255,255" # Font color in RGB format
 
 [settings.tts]
-voice_choice = "googletranslate" # Choose a TTS platform, e.g., "tiktok", "googletranslate"
-random_voice = true # Set to false to use the same voice for all comments
-elevenlabs_voice_name = "Bella" # Choose a voice for ElevenLabs TTS
-elevenlabs_api_key = "" # Optional: provide your ElevenLabs API key
-aws_polly_voice = "Matthew" # Choose a voice for AWS
+voice_choice = "pyttsx"  # Options: elevenlabs, streamlabspolly, tiktok, googletranslate, awspolly, pyttsx
+random_voice = false
+elevenlabs_voice_name = "Bella"  # Options: Adam, Jessica, Brian, Roger, Antoni, Arnold, Bella, Domi, Elli, Josh, Rachel, Sam
+aws_polly_voice = "Matthew"
+streamlabs_polly_voice = "Matthew"
+python_voice = "1"
+py_voice_num = "2"
+silence_duration = 0.3
+no_emojis = false
