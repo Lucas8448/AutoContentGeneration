@@ -46,6 +46,11 @@ checkversion(__VERSION__)
 def load_config(file_path):
     config = toml.load(file_path)
 
+    # Store current values
+    old_reddit_client_id = config['reddit']['creds']['client_id']
+    old_reddit_client_secret = config['reddit']['creds']['client_secret']
+    old_reddit_password = config['reddit']['creds']['password']
+
     config['reddit']['creds']['client_id'] = getenv('REDDIT_CLIENT_ID', config['reddit']['creds']['client_id'])
     config['reddit']['creds']['client_secret'] = getenv('REDDIT_CLIENT_SECRET', config['reddit']['creds']['client_secret'])
     config['reddit']['creds']['username'] = "Working_Patient_8534"
@@ -53,6 +58,12 @@ def load_config(file_path):
     print("Updated config with environment variables")
 
     toml.dump(config, open(file_path, 'w'))
+
+    # check if any of the values have changed
+    if old_reddit_client_id != config['reddit']['creds']['client_id'] or old_reddit_client_secret != config['reddit']['creds']['client_secret'] or old_reddit_password != config['reddit']['creds']['password']:
+        print("Config file has been updated with environment variables")
+    else:
+        print("Config file has not been updated with environment variables")
     
     return config
 
